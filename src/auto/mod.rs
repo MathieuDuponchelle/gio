@@ -209,6 +209,30 @@ mod tls_certificate;
 pub use self::tls_certificate::TlsCertificate;
 pub use self::tls_certificate::TlsCertificateExt;
 
+mod tls_client_connection;
+pub use self::tls_client_connection::TlsClientConnection;
+pub use self::tls_client_connection::TlsClientConnectionExt;
+
+mod tls_connection;
+pub use self::tls_connection::TlsConnection;
+pub use self::tls_connection::TlsConnectionExt;
+
+mod tls_database;
+pub use self::tls_database::TlsDatabase;
+pub use self::tls_database::TlsDatabaseExt;
+
+mod tls_interaction;
+pub use self::tls_interaction::TlsInteraction;
+pub use self::tls_interaction::TlsInteractionExt;
+
+mod tls_password;
+pub use self::tls_password::TlsPassword;
+pub use self::tls_password::TlsPasswordExt;
+
+mod tls_server_connection;
+pub use self::tls_server_connection::TlsServerConnection;
+pub use self::tls_server_connection::TlsServerConnectionExt;
+
 mod resource;
 pub use self::resource::Resource;
 
@@ -240,6 +264,12 @@ pub use self::enums::SocketFamily;
 pub use self::enums::SocketListenerEvent;
 pub use self::enums::SocketProtocol;
 pub use self::enums::SocketType;
+pub use self::enums::TlsAuthenticationMode;
+#[cfg(any(feature = "v2_40", feature = "dox"))]
+pub use self::enums::TlsCertificateRequestFlags;
+pub use self::enums::TlsDatabaseLookupFlags;
+pub use self::enums::TlsInteractionResult;
+pub use self::enums::TlsRehandshakeMode;
 
 mod flags;
 pub use self::flags::AppInfoCreateFlags;
@@ -252,6 +282,8 @@ pub use self::flags::OutputStreamSpliceFlags;
 pub use self::flags::ResourceLookupFlags;
 pub use self::flags::SettingsBindFlags;
 pub use self::flags::TlsCertificateFlags;
+pub use self::flags::TlsDatabaseVerifyFlags;
+pub use self::flags::TlsPasswordFlags;
 
 pub mod functions;
 
@@ -307,4 +339,10 @@ pub mod traits {
     pub use super::ThemedIconExt;
     pub use super::ThreadedSocketServiceExt;
     pub use super::TlsCertificateExt;
+    pub use super::TlsClientConnectionExt;
+    pub use super::TlsConnectionExt;
+    pub use super::TlsDatabaseExt;
+    pub use super::TlsInteractionExt;
+    pub use super::TlsPasswordExt;
+    pub use super::TlsServerConnectionExt;
 }
